@@ -1,4 +1,4 @@
-﻿}using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,12 +11,14 @@ namespace ClasesObligatorio
         private string _nombre;
         private string _apellido;
         private DateTime _fechaNacimiento;
+        private Boolean _bloqueado;
         private List<Miembro> _amigos;
         private List<Solicitud> _solicitudes;
 
         public string Nombre { get { return _nombre; } set { _nombre = value; } }
         public string Apellido { get { return _apellido; } set { _apellido = value; } }
         public DateTime FechaNacimiento { get { return _fechaNacimiento; } set { _fechaNacimiento = value; } }
+        public Boolean Bloqueado { get { return _bloqueado;  } set {  _bloqueado = value; } }
         public Miembro(string email, string password, string nombre, string apellido, DateTime fechaNacimiento)
         {
             this.Email = email;
@@ -24,14 +26,9 @@ namespace ClasesObligatorio
             this._nombre = nombre;
             this._apellido = apellido;
             this._fechaNacimiento = fechaNacimiento;
+            this._bloqueado = false;
         }
 
-        public Boolean EnviarSolicitud(string emailEmisor, string emailReceptor)
-        {
-            Solicitud solicitud = new Solicitud(emailEmisor, emailReceptor);
-            //if user blocked, return false; 
-            return true; //temporal solution, will fix l8er.
-        }
         public Boolean AceptarSolicitud(int id)
         {
             Boolean solicitudEncontrada = false;

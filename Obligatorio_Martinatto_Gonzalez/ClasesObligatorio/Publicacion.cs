@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClasesObligatorio
 {
-    public class Publicaciones
+    public abstract class Publicacion
     {
         private int _id;
         private static int _ultimoId;
@@ -22,10 +22,6 @@ namespace ClasesObligatorio
         public DateTime Fecha { get { return _fecha; } set { _fecha = value; } }
         public string Contenido { get { return _contenido; } set { _contenido = value; } }
         public Boolean Privacidad { get { return _privacidad; } set { _privacidad = value; } }
-
-        public Publicaciones()
-        { 
-            //aca va el constructor
-        }
+    
     }
 }

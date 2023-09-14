@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {}
+    "net7.0": {
+      "ClasesObligatorio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/ClasesObligatorio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ClasesObligatorio.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "ClasesObligatorio/1.0.0": {
+      "type": "project",
+      "path": "../ClasesObligatorio/ClasesObligatorio.csproj",
+      "msbuildProject": "../ClasesObligatorio/ClasesObligatorio.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net7.0": []
+    "net7.0": [
+      "ClasesObligatorio >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Usuario\\.nuget\\packages\\": {},
@@ -38,7 +57,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Usuario\\cositoLoco\\Obligatorio_Martinatto_Gonzalez\\ClasesObligatorio\\ClasesObligatorio.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\cositoLoco\\Obligatorio_Martinatto_Gonzalez\\ClasesObligatorio\\ClasesObligatorio.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

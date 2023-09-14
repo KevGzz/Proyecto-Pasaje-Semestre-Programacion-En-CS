@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace ClasesObligatorio
 {
-    public class Comentario : Publicaciones
+    public class Comentario : Publicacion
     {
+        public Comentario(string titulo, DateTime fecha, Usuario autor, string contenido, Boolean privacidad)
+        {
+            Id = UltimoId;
+            UltimoId++;
+            Titulo = titulo;
+            Autor = (Miembro)autor;
+            Fecha = fecha;
+            Contenido = contenido;
+            Privacidad = privacidad;
+        }
     }
 }

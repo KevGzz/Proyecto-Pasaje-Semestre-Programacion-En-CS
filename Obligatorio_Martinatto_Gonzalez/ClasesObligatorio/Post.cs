@@ -6,24 +6,24 @@ using System.Threading.Tasks;
 
 namespace ClasesObligatorio
 {
-    public class Post : Publicaciones
+    public class Post : Publicacion
     {
         private string _imagen;
         private Boolean _censurado;
         private List<Comentario> _comentarios;
 
-        public Post(string titulo, DateTime fecha, Miembro autor, string contenido, Boolean privacidad, string imagen, bool censurado, List<Comentario> comentarios)
+        public Post(string titulo, DateTime fecha, Usuario autor, string contenido, Boolean privacidad, string imagen)
         {
             Id = UltimoId;
             UltimoId++;
             Titulo = titulo;
-            Autor = autor;
+            Autor = (Miembro)autor;
             Fecha = fecha;
             Contenido = contenido;
             Privacidad = privacidad;
             this._imagen = imagen;
-            this._censurado = censurado;
-            this._comentarios = comentarios;
+            this._censurado = false;
+            this._comentarios = null;
         }
     }
 }
