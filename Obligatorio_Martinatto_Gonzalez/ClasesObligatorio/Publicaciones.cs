@@ -25,6 +25,7 @@ namespace ClasesObligatorio
 
         public Publicaciones()
         { 
+            //aca va el constructor
         }
     }
 }
