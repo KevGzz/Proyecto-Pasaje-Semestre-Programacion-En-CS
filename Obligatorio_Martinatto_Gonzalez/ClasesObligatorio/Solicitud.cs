@@ -6,22 +6,21 @@ using System.Threading.Tasks;
 
 namespace ClasesObligatorio
 {
-    internal class Solicitud
+    public class Solicitud
     {
-        private int _id;
-        private static int UltimoId;
-        private string _emisor;
-        private string _receptor;
-        private Invitacion _estadoSolicitud;
-        public int Id { get { return _id; } set { _id = value; } }
-        public Invitacion EstadoSolicitud { get { return _estadoSolicitud; } set { _estadoSolicitud = value; } }
+        public int Id { get; set; }
+        private static int s_ultimoId;
+        public string Emisor { get; set; }
+        public string Receptor { get; set; } 
+        public Invitacion EstadoSolicitud { get; set; }
+
         public Solicitud(string emisor, string receptor)
         {
-            this._id = UltimoId;
-            UltimoId++;
-            this._emisor = emisor;
-            this._receptor = receptor;
-            this._estadoSolicitud = Invitacion.PENDIENTE_APROBACION;
+            this.Id = s_ultimoId;
+            s_ultimoId++;
+            this.Emisor = emisor;
+            this.Receptor = receptor;
+            this.EstadoSolicitud = Invitacion.PENDIENTE_APROBACION;
         }
     }
 }

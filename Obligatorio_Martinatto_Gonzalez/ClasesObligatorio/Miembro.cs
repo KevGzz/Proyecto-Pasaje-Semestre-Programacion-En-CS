@@ -12,13 +12,17 @@ namespace ClasesObligatorio
         private string _apellido;
         private DateTime _fechaNacimiento;
         private Boolean _bloqueado;
-        private List<Miembro> _amigos;
-        private List<Solicitud> _solicitudes;
+        private List<Miembro> _amigos = new List<Miembro>();
+        private List<Solicitud> _solicitudes = new List<Solicitud>();  
 
         public string Nombre { get { return _nombre; } set { _nombre = value; } }
         public string Apellido { get { return _apellido; } set { _apellido = value; } }
         public DateTime FechaNacimiento { get { return _fechaNacimiento; } set { _fechaNacimiento = value; } }
         public Boolean Bloqueado { get { return _bloqueado;  } set {  _bloqueado = value; } }
+        public List<Miembro> GetAmigos() {  return _amigos; }
+        public void AddAmigo(Miembro unAmigo) { _amigos.Add(unAmigo); }
+        public List<Solicitud> GetSolicitudes() { return _solicitudes; }
+        public void AddSolicitud(Solicitud unaSolicitud) { _solicitudes.Add(unaSolicitud); }
         public Miembro(string email, string password, string nombre, string apellido, DateTime fechaNacimiento)
         {
             this.Email = email;

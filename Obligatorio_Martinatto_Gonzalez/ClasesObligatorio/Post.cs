@@ -8,21 +8,23 @@ namespace ClasesObligatorio
 {
     public class Post : Publicacion
     {
-        private string _imagen;
-        private Boolean _censurado;
+        public string Imagen {  get; set; }
+        public Boolean Censurado {  get; set; }
         private List<Comentario> _comentarios;
+        public List<Comentario> GetComentarios() { return _comentarios; }
+        public void AddComentario(Comentario unComentario) { _comentarios.Add(unComentario); }
 
         public Post(string titulo, DateTime fecha, Usuario autor, string contenido, Boolean privacidad, string imagen)
         {
-            Id = UltimoId;
-            UltimoId++;
+            Id = S_UltimoId;
+            S_UltimoId++;
             Titulo = titulo;
             Autor = (Miembro)autor;
             Fecha = fecha;
             Contenido = contenido;
             Privacidad = privacidad;
-            this._imagen = imagen;
-            this._censurado = false;
+            Imagen = imagen;
+            Censurado = false;
             this._comentarios = null;
         }
     }

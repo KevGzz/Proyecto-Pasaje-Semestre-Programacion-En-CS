@@ -8,5 +8,10 @@ namespace ClasesObligatorio
 {
     public class Administrador : Usuario
     {
+        public Administrador(string email, string password) 
+        {
+            Email = email;
+            Password = password;
+        }
     }
 }

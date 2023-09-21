@@ -10,8 +10,8 @@ namespace ClasesObligatorio
     {
         public Comentario(string titulo, DateTime fecha, Usuario autor, string contenido, Boolean privacidad)
         {
-            Id = UltimoId;
-            UltimoId++;
+            Id = S_UltimoId;
+            S_UltimoId++;
             Titulo = titulo;
             Autor = (Miembro)autor;
             Fecha = fecha;
