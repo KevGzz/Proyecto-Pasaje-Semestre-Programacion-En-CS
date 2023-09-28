@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClasesObligatorio
 {
-    public enum Reaction
+    public enum TipoReaccion
     {
         like = 1,
         dislike = 2

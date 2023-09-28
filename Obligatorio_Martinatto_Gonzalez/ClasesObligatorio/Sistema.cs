@@ -11,6 +11,13 @@ namespace ClasesObligatorio
         private List<Usuario> _usuarios = new List<Usuario>();
         private List<Publicacion> _publicaciones = new List<Publicacion>(); 
         private static Usuario s_usuarioLogeado;
+        private static Sistema _instancia;
+        public static Sistema GetInstancia()
+        {
+            if (_instancia == null) _instancia = new Sistema();
+            return _instancia;
+        }
+        private Sistema() { }
         public Usuario UsuarioLogeado { get { return s_usuarioLogeado;} set {  s_usuarioLogeado = value; } }
         public List<Usuario> GetUsuarios() { return _usuarios; }
         public void AddUsuario(Usuario unUsuario) { _usuarios.Add(unUsuario); }
@@ -32,6 +39,7 @@ namespace ClasesObligatorio
             }
             return resultado;
         }
+
         public Boolean RealizarComentario(string titulo, string texto, char privacidad)
         {
             Boolean esPublico;
@@ -79,32 +87,39 @@ namespace ClasesObligatorio
             }
             return resultado;
         }
-        public Boolean ValidarUsuario(string email)
+
+        public string RegisterAdmin(string email, string password)
         {
-            Boolean resultado = true;
-            foreach(Usuario usuario in _usuarios)
+            string resultado = "";
+            Administrador admin = new Administrador();
+            Boolean emailValidado = admin.ValidarAdmin(email);
+            if (!emailValidado) resultado = "| El email no es valido. No puede ser vacío. |";
+            Boolean passwordValidada = admin.ValidarPassword(password);
+            if (!passwordValidada) resultado += "| La contraseña no es valida. Recuerde que debe ser mayor que 8 caracteres y debe utilizar mayusculas y minusculas. |";
+            if (emailValidado)
             {
-                if (usuario.Email == email) resultado = false;
+                Administrador nuevoAdmin = new Administrador(email, password);
+                AddUsuario(nuevoAdmin);
             }
             return resultado;
         }
-        public void RegisterAdmin(string email, string password)
+        public string RegisterMiembro(string email, string password, string nombre, string apellido, DateTime fechaNacimiento)
         {
-            Boolean emailValidado = ValidarUsuario(email);
-            if (emailValidado)
+            Miembro miembro = new Miembro();
+            string resultado = "";
+            Boolean emailValidado = miembro.ValidarMiembro(email);
+            if (!emailValidado) resultado = "| El email no es valido. No puede ser vacío. |";
+            Boolean passwordValidada = miembro.ValidarPassword(password);
+            if (!passwordValidada) resultado += "| La contraseña no es valida. Recuerde que debe ser mayor que 8 caracteres y debe utilizar mayusculas y minusculas. |";
+            Boolean nomYapeValidados = miembro.ValidarNomYapellido(nombre, apellido);
+            if (!nomYapeValidados) resultado += "| Su nombre y/o apellido no son validos. No pueden contener numeros o ser vacíos. |";
+            if (emailValidado && passwordValidada && nomYapeValidados)
             {
-                Administrador admin = new Administrador(email, password);
-                AddUsuario(admin);
-            } 
-        }
-        public void RegisterMiembro(string email, string password, string nombre, string apellido, DateTime fechaNacimiento)
-        {
-            Boolean emailValidado = ValidarUsuario(email);
-            if (emailValidado)
-            {
-                Miembro miembro = new Miembro(email, password, nombre, apellido, fechaNacimiento);
-                AddUsuario(miembro);
+                Miembro nuevoMiembro = new Miembro(email, password, nombre, apellido, fechaNacimiento);
+                resultado = "El miembro fue registrado exitosamente.";
+                AddUsuario(nuevoMiembro);
             }
+            return resultado;
         }
         public Boolean Login(string email, string password)
         {
