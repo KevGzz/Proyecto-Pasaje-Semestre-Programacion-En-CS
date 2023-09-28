@@ -74,31 +74,9 @@ namespace ClasesObligatorio
             if(nombre != "" && apellido != "") resultado = true;
             return resultado;
         }
-        public Boolean AceptarSolicitud(int id)
+        public override string ToString()
         {
-            Boolean solicitudEncontrada = false;
-            foreach (Solicitud solicitud in this._solicitudes)
-            {
-                if (id == solicitud.Id)
-                {
-                    solicitud.EstadoSolicitud = Invitacion.APROBADA;
-                    solicitudEncontrada = true;
-                }
-            }
-            return solicitudEncontrada;
-        }
-        public Boolean RechazarSolicitud(int id)
-        {
-            Boolean solicitudEncontrada = false;
-            foreach(Solicitud solicitud in this._solicitudes)
-            {
-                if(id == solicitud.Id)
-                {
-                    solicitud.EstadoSolicitud = Invitacion.RECHAZADA;
-                    solicitudEncontrada = true;
-                }
-            }
-            return solicitudEncontrada;
+            return "Nombre: " + Nombre + " Apellido: " + Apellido + " Email: " + Email;
         }
     }
 }

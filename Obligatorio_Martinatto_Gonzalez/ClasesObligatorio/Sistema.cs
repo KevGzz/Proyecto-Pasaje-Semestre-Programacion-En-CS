@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +10,7 @@ namespace ClasesObligatorio
     public class Sistema
     {
         private List<Usuario> _usuarios = new List<Usuario>();
-        private List<Publicacion> _publicaciones = new List<Publicacion>(); 
+        private List<Publicacion> _publicaciones = new List<Publicacion>();
         private static Usuario s_usuarioLogeado;
         private static Sistema _instancia;
         public static Sistema GetInstancia()
@@ -18,7 +19,7 @@ namespace ClasesObligatorio
             return _instancia;
         }
         private Sistema() { }
-        public Usuario UsuarioLogeado { get { return s_usuarioLogeado;} set {  s_usuarioLogeado = value; } }
+        public Usuario UsuarioLogeado { get { return s_usuarioLogeado; } set { s_usuarioLogeado = value; } }
         public List<Usuario> GetUsuarios() { return _usuarios; }
         public void AddUsuario(Usuario unUsuario) { _usuarios.Add(unUsuario); }
         public List<Publicacion> GetPublicaciones() { return _publicaciones; }
@@ -29,7 +30,7 @@ namespace ClasesObligatorio
             Boolean resultado = false;
             Miembro autor = (Miembro)s_usuarioLogeado;
             DateTime fecha = DateTime.Now;
-            if (privacidad == 'S') esPublico = false; 
+            if (privacidad == 'S') esPublico = false;
             else esPublico = true;
             if (!autor.Bloqueado)
             {
@@ -40,34 +41,45 @@ namespace ClasesObligatorio
             return resultado;
         }
 
-        public Boolean RealizarComentario(string titulo, string texto, char privacidad)
+        public Boolean RealizarComentario(int idPost, string titulo, string texto, char privacidad)
         {
+            
             Boolean esPublico;
             Boolean resultado = false;
+            Publicacion laPublicacion = null;
             Miembro autor = (Miembro)s_usuarioLogeado;
             DateTime fecha = DateTime.Now;
             if (privacidad == 'S') esPublico = false;
             else esPublico = true;
             if (!autor.Bloqueado)
             {
+                foreach (Publicacion publicacion in _publicaciones)
+                {
+                    if (publicacion is Post && publicacion.Id == idPost) 
+                    {
+                        laPublicacion = publicacion;
+                    }
+                }
                 Comentario comentario = new Comentario(titulo, fecha, autor, texto, esPublico);
                 AddPublicacion(comentario);
+                (laPublicacion as Post).AddComentario(comentario);
                 resultado = true;
+
             }
             return resultado;
         }
         public Boolean BloquearUsuario(string email)
         {
             Boolean resultado = false;
-            if(s_usuarioLogeado == (Administrador)s_usuarioLogeado)
+            if (s_usuarioLogeado == (Administrador)s_usuarioLogeado)
             {
-                foreach(Miembro miembro in _usuarios)
+                foreach (Miembro miembro in _usuarios)
                 {
-                    if(miembro.Email == email) 
+                    if (miembro.Email == email)
                     {
                         miembro.Bloqueado = true;
                         resultado = true;
-                    } 
+                    }
                 }
             }
             return resultado;
@@ -75,13 +87,17 @@ namespace ClasesObligatorio
         public Boolean EnviarSolicitud(string emailReceptor)
         {
             Boolean resultado = false;
-            foreach (Miembro miembro in _usuarios)
+            foreach (Usuario usuario in _usuarios )
             {
-                if(emailReceptor == miembro.Email)
+                if (usuario is Miembro)
                 {
-                    if (s_usuarioLogeado is Miembro miembroEmisor && !miembroEmisor.Bloqueado) { 
-                        Solicitud solicitud = new Solicitud(s_usuarioLogeado.Email, emailReceptor);
-                        resultado = true;
+                    if (emailReceptor == usuario.Email)
+                    {
+                        if (s_usuarioLogeado is Miembro miembroEmisor && !miembroEmisor.Bloqueado)
+                        {
+                            Solicitud solicitud = new Solicitud(s_usuarioLogeado.Email, emailReceptor);
+                            resultado = true;
+                        }
                     }
                 }
             }
@@ -124,7 +140,7 @@ namespace ClasesObligatorio
         public Boolean Login(string email, string password)
         {
             Boolean resultado = false;
-            foreach(Usuario usuario in _usuarios)
+            foreach (Usuario usuario in _usuarios)
             {
                 if (usuario.Email == email && usuario.Password == password)
                 {
@@ -134,5 +150,63 @@ namespace ClasesObligatorio
             }
             return resultado;
         }
+        public List<string> BuscarPorEmail(string email)
+        {
+            List<string> lista = new List<string>();
+            foreach (Publicacion publicacion in _publicaciones)
+            {
+                if (publicacion.Autor.Email == email) lista.Add(publicacion.ToString());
+            }
+            return lista;
+        }
+        public Boolean AceptarSolicitud(int id)
+        {
+            Boolean solicitudEncontrada = false;
+            Miembro miembro = new Miembro();
+            foreach (Solicitud solicitud in miembro.GetSolicitudes())
+            {
+                if (id == solicitud.Id)
+                {
+                    solicitud.EstadoSolicitud = Invitacion.APROBADA;
+                    solicitudEncontrada = true;
+                }
+            }
+            return solicitudEncontrada;
+        }
+        public Boolean RechazarSolicitud(int id)
+        {
+            Boolean solicitudEncontrada = false;
+            Miembro miembro = new Miembro();
+            foreach (Solicitud solicitud in miembro.GetSolicitudes())
+            {
+                if (id == solicitud.Id)
+                {
+                    solicitud.EstadoSolicitud = Invitacion.RECHAZADA;
+                    solicitudEncontrada = true;
+                }
+            }
+            return solicitudEncontrada;
+        }
+
+        public void Reaccionar(string tipoReaccion, int id)
+        {
+            foreach (Publicacion publicacion in _publicaciones)
+            {
+                if (publicacion.Id == id)
+                {
+                    if (tipoReaccion == "like")
+                    {
+                        Reaccion unaReaccion = new Reaccion(TipoReaccion.like, (Miembro)UsuarioLogeado);
+                        publicacion.AddReaccion(unaReaccion);
+                    }
+                    else
+                    {
+                        Reaccion unaReaccion = new Reaccion(TipoReaccion.dislike, (Miembro)UsuarioLogeado);
+                        publicacion.AddReaccion(unaReaccion);
+                    }
+                }
+            }
+        }
     }
 }
+

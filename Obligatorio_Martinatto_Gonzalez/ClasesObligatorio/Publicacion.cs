@@ -16,7 +16,7 @@ namespace ClasesObligatorio
         public string Contenido { get; set; }
         public Boolean Privacidad { get; set; }
 
-        private List<Reaccion> _reacciones;
+        private List<Reaccion> _reacciones = new List<Reaccion>();
         public List<Reaccion> GetReacciones()
         {
             return _reacciones;
@@ -24,6 +24,11 @@ namespace ClasesObligatorio
         public void AddReaccion(Reaccion unaReaccion)
         {
             _reacciones.Add(unaReaccion);
+        }
+        public override string ToString()
+        {
+            return "Titulo: " + Titulo + " Autor: " + Autor.ToString() 
+                + " Fecha: " + Fecha + " Contenido: " + Contenido;
         }
     }
 }

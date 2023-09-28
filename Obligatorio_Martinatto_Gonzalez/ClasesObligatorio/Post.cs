@@ -25,7 +25,7 @@ namespace ClasesObligatorio
             Privacidad = privacidad;
             Imagen = imagen;
             Censurado = false;
-            this._comentarios = null;
+            _comentarios = new List<Comentario>();
         }
     }
 }
