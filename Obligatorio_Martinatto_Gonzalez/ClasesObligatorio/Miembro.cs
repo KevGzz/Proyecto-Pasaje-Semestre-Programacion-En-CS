@@ -52,21 +52,28 @@ namespace ClasesObligatorio
             Boolean resultado = false;
             Boolean tieneMayus = false;
             Boolean tieneMinus = false;
+            Boolean tieneNum = false;
             string mayus = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             string minus = "abcdefghijklnmopqrstuvwxyz";
-            if(password.Length >= 8)
+            string numeros = "1234567890";
+            if (password.Length >= 8)
             {
-                for(int i = 0; i <= mayus.Length; i++)
+                for (int i = 0; i < mayus.Length; i++)
                 {
-                    string letra = mayus.Substring(i);
+                    string letra = mayus.Substring(i, 1);
                     if (password.Contains(letra)) tieneMayus = true;
                 }
-                for (int i = 0; i <= minus.Length; i++)
+                for (int i = 0; i < minus.Length; i++)
                 {
-                    string letra = minus.Substring(i);
+                    string letra = minus.Substring(i, 1);
                     if (password.Contains(letra)) tieneMinus = true;
                 }
-                if (tieneMayus && tieneMinus) resultado = true;
+                for (int i = 0; i < numeros.Length; i++)
+                {
+                    string numero = numeros.Substring(i, 1);
+                    if (password.Contains(numero)) tieneNum = true;
+                }
+                if (tieneMayus && tieneMinus && tieneNum) resultado = true;
             }
             return resultado;
         }

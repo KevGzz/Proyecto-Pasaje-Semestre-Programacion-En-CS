@@ -340,10 +340,18 @@ while (opcion != 6)
             string nombre = Console.ReadLine();
             Console.WriteLine("Ingrese un apellido: ");
             string apellido = Console.ReadLine();
-            Console.WriteLine("Ingrese su fecha de nacimiento (Debe ser en el formato Mes/Día/Año): ");
-            string format = "MM/dd/yyyy";
-            string fechaSinFor = Console.ReadLine();
-            DateTime fecha = DateTime.ParseExact(fechaSinFor, format, CultureInfo.InvariantCulture);
+            bool correctFormat = false;
+            DateTime fecha = new DateTime();
+            do
+            {
+                try
+                {
+                    Console.WriteLine("Ingrese su fecha de nacimiento: ");
+                    fecha = DateTime.Parse(Console.ReadLine());
+                    correctFormat = true;
+                }
+                catch (Exception ex) { Console.WriteLine("El formato de la fecha es incorrecto, por favor intente nuevamente."); }
+            } while (!correctFormat);
             Console.WriteLine(miSistema.RegisterMiembro(email, password, nombre, apellido, fecha)); 
             break;
         case 2:
@@ -367,11 +375,11 @@ while (opcion != 6)
         case 4: 
             try
             {
-                Console.WriteLine("Ingrese una fecha (FORMATO: YYYY/MM/DD): ");
+                Console.WriteLine("Ingrese una fecha: ");
                 fecha = DateTime.Now;
                 DateTime fecha2 = DateTime.Now;
                 fecha = DateTime.Parse(Console.ReadLine());
-                Console.WriteLine("Ingrese una segunda fecha (FORMATO: YYYY/MM/DD): ");
+                Console.WriteLine("Ingrese una segunda fecha: ");
                 fecha2 = DateTime.Parse(Console.ReadLine());
                 List<string> listaPub = new List<string>();
                 if (fecha > fecha2) // Condicion para fijarse si la primer fecha es mayor a la segunda y vice versa. Hace la comparación más fácil en el metodo de Sistema.

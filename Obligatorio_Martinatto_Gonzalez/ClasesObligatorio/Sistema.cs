@@ -116,9 +116,10 @@ namespace ClasesObligatorio
             string resultado = "";
             Administrador admin = new Administrador();
             Boolean emailValidado = admin.ValidarAdmin(email);
-            if (!emailValidado) resultado = "| El email no es valido. No puede ser vacío. |";
+            if (email == "") resultado = "| El email no es valido. No puede ser vacío. |";
+            if (!emailValidado) resultado += " | El email proporcionado ya existe. | ";
             Boolean passwordValidada = admin.ValidarPassword(password);
-            if (!passwordValidada) resultado += "| La contraseña no es valida. Recuerde que debe ser mayor que 8 caracteres y debe utilizar mayusculas y minusculas. |";
+            if (!passwordValidada) resultado += "| La contraseña no es valida. Recuerde que debe ser mayor que 8 caracteres, debe utilizar mayusculasm, minusculas y numeros. |";
             if (emailValidado && passwordValidada)
             {
                 Administrador nuevoAdmin = new Administrador(email, password);
@@ -131,9 +132,10 @@ namespace ClasesObligatorio
             Miembro miembro = new Miembro();
             string resultado = "";
             Boolean emailValidado = miembro.ValidarMiembro(email);
-            if (!emailValidado) resultado = "| El email no es valido. No puede ser vacío. |";
+            if(email == "") resultado = "| El email no es valido. No puede ser vacío. |";
+            if (!emailValidado) resultado += " | El email ya existe. | ";
             Boolean passwordValidada = miembro.ValidarPassword(password);
-            if (!passwordValidada) resultado += "| La contraseña no es valida. Recuerde que debe ser mayor que 8 caracteres y debe utilizar mayusculas y minusculas. |";
+            if (!passwordValidada) resultado += "| La contraseña no es valida. Recuerde que debe ser mayor que 8 caracteres, debe utilizar mayusculasm, minusculas y numeros. |";
             Boolean nomYapeValidados = miembro.ValidarNomYapellido(nombre, apellido);
             if (!nomYapeValidados) resultado += "| Su nombre y/o apellido no son validos. No pueden contener numeros o ser vacíos. |";
             if (emailValidado && passwordValidada && nomYapeValidados)
@@ -206,8 +208,7 @@ namespace ClasesObligatorio
         public List<string> BuscarPorFecha(DateTime fecha, DateTime fecha2)
         {
             List<string> lista = new List<string>();
-            List<Publicacion> listaPub = new List<Publicacion>();
-            listaPub = _publicaciones;
+            List<Publicacion> listaPub = new List<Publicacion>(_publicaciones);
             listaPub.Sort();
             foreach (Publicacion publicacion in listaPub)
             {
