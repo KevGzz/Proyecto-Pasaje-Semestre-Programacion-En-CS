@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClasesObligatorio
 {
-    public abstract class Publicacion
+    public abstract class Publicacion : IComparable<Publicacion>
     {
         public int Id { get; set; }
         public static int S_UltimoId { get; set; }
@@ -15,7 +15,7 @@ namespace ClasesObligatorio
         public DateTime Fecha { get; set; }
         public string Contenido { get; set; }
         public Boolean Privacidad { get; set; }
-
+        public Publicacion() { }
         private List<Reaccion> _reacciones = new List<Reaccion>();
         public List<Reaccion> GetReacciones()
         {
@@ -25,10 +25,9 @@ namespace ClasesObligatorio
         {
             _reacciones.Add(unaReaccion);
         }
-        public override string ToString()
+        public int CompareTo(Publicacion? other)
         {
-            return "Titulo: " + Titulo + " Autor: " + Autor.ToString() 
-                + " Fecha: " + Fecha + " Contenido: " + Contenido;
+            return Titulo.CompareTo(other.Titulo);
         }
     }
 }

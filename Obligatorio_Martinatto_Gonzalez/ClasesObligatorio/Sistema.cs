@@ -24,58 +24,65 @@ namespace ClasesObligatorio
         public void AddUsuario(Usuario unUsuario) { _usuarios.Add(unUsuario); }
         public List<Publicacion> GetPublicaciones() { return _publicaciones; }
         public void AddPublicacion(Publicacion unaPublicacion) { _publicaciones.Add(unaPublicacion); }
-        public Boolean RealizarPost(string titulo, string texto, string imagen, char privacidad)
+        public Boolean RealizarPost(string titulo, string texto, string imagen, char privacidad, DateTime fecha)
         {
             Boolean esPublico;
             Boolean resultado = false;
             Miembro autor = (Miembro)s_usuarioLogeado;
-            DateTime fecha = DateTime.Now;
-            if (privacidad == 'S') esPublico = false;
-            else esPublico = true;
-            if (!autor.Bloqueado)
+            Post post = new Post();
+            if (post.ValidarTitulo(titulo) && post.ValidarContenido(texto))
             {
-                Post post = new Post(titulo, fecha, autor, texto, esPublico, imagen);
-                AddPublicacion(post);
-                resultado = true;
+                if (privacidad == 'S') esPublico = true; // Si es true es publico, de lo contrario false. 
+                else esPublico = false;                  // No está implementado en consola pero en el caso de que si, habría un mensaje parecido a lo siguente:
+                if (!autor.Bloqueado)                    // Desea que su post sea publico? S - Si | N - No.
+                {
+                    Post elPost = new Post(titulo, fecha, autor, texto, esPublico, imagen);
+                    AddPublicacion(elPost);
+                    resultado = true;
+                }
             }
             return resultado;
         }
 
-        public Boolean RealizarComentario(int idPost, string titulo, string texto, char privacidad)
+        public Boolean RealizarComentario(int idPost, string titulo, string texto)
         {
-            
             Boolean esPublico;
             Boolean resultado = false;
             Publicacion laPublicacion = null;
             Miembro autor = (Miembro)s_usuarioLogeado;
-            DateTime fecha = DateTime.Now;
-            if (privacidad == 'S') esPublico = false;
-            else esPublico = true;
+            Comentario comentario = new Comentario();
+            DateTime fecha = DateTime.Today;
+
             if (!autor.Bloqueado)
             {
-                foreach (Publicacion publicacion in _publicaciones)
+                foreach (Publicacion unaPublicacion in _publicaciones)
                 {
-                    if (publicacion is Post && publicacion.Id == idPost) 
+                    if (unaPublicacion is Post && unaPublicacion.Id == idPost) // Se revisa la lista de publicaciones y se chequea que la publicación no solo sea un post, sino que tenga la misma id.
                     {
-                        laPublicacion = publicacion;
+                        laPublicacion = unaPublicacion;
                     }
                 }
-                Comentario comentario = new Comentario(titulo, fecha, autor, texto, esPublico);
-                AddPublicacion(comentario);
-                (laPublicacion as Post).AddComentario(comentario);
+                if (comentario.ValidarTitulo(titulo) && comentario.ValidarContenido(texto) && laPublicacion != null)
+                {
+                    esPublico = laPublicacion.Privacidad; // Si un post es publico, el comentario también lo va a ser.
+                    Comentario elComentario = new Comentario(titulo, fecha, autor, texto, esPublico);
+                    AddPublicacion(elComentario);
+                    (laPublicacion as Post).AddComentario(elComentario);
+                    resultado = true;
+                }
                 resultado = true;
 
             }
             return resultado;
         }
-        public Boolean BloquearUsuario(string email)
+        public Boolean BloquearUsuario(string email) // Only admin
         {
             Boolean resultado = false;
-            if (s_usuarioLogeado == (Administrador)s_usuarioLogeado)
+            if (s_usuarioLogeado is Administrador) // Si el usuario logueado es administrador, realiza el bloqueo, de lo contrario devuelve false.
             {
                 foreach (Miembro miembro in _usuarios)
                 {
-                    if (miembro.Email == email)
+                    if (miembro.Email == email) // Si el email coincide, se bloquea al usuario, de lo contrario, devuelve false.
                     {
                         miembro.Bloqueado = true;
                         resultado = true;
@@ -87,15 +94,15 @@ namespace ClasesObligatorio
         public Boolean EnviarSolicitud(string emailReceptor)
         {
             Boolean resultado = false;
-            foreach (Usuario usuario in _usuarios )
+            foreach (Usuario usuario in _usuarios)
             {
-                if (usuario is Miembro)
+                if (usuario is Miembro) // Solo un usuario puede enviar solicitudes
                 {
                     if (emailReceptor == usuario.Email)
                     {
                         if (s_usuarioLogeado is Miembro miembroEmisor && !miembroEmisor.Bloqueado)
                         {
-                            Solicitud solicitud = new Solicitud(s_usuarioLogeado.Email, emailReceptor);
+                            Solicitud solicitud = new Solicitud((s_usuarioLogeado as Miembro), (usuario as Miembro));
                             resultado = true;
                         }
                     }
@@ -104,7 +111,7 @@ namespace ClasesObligatorio
             return resultado;
         }
 
-        public string RegisterAdmin(string email, string password)
+        public string RegisterAdmin(string email, string password) // Devuelve un mensaje, sea de exito o de error.
         {
             string resultado = "";
             Administrador admin = new Administrador();
@@ -112,14 +119,14 @@ namespace ClasesObligatorio
             if (!emailValidado) resultado = "| El email no es valido. No puede ser vacío. |";
             Boolean passwordValidada = admin.ValidarPassword(password);
             if (!passwordValidada) resultado += "| La contraseña no es valida. Recuerde que debe ser mayor que 8 caracteres y debe utilizar mayusculas y minusculas. |";
-            if (emailValidado)
+            if (emailValidado && passwordValidada)
             {
                 Administrador nuevoAdmin = new Administrador(email, password);
                 AddUsuario(nuevoAdmin);
             }
             return resultado;
         }
-        public string RegisterMiembro(string email, string password, string nombre, string apellido, DateTime fechaNacimiento)
+        public string RegisterMiembro(string email, string password, string nombre, string apellido, DateTime fechaNacimiento) // Devuelve un mensaje, sea de exito o de error.
         {
             Miembro miembro = new Miembro();
             string resultado = "";
@@ -137,7 +144,7 @@ namespace ClasesObligatorio
             }
             return resultado;
         }
-        public Boolean Login(string email, string password)
+        public Boolean Login(string email, string password) // Revisa la lista de usuarios y chequea que coincida email y contraseña.
         {
             Boolean resultado = false;
             foreach (Usuario usuario in _usuarios)
@@ -145,18 +152,73 @@ namespace ClasesObligatorio
                 if (usuario.Email == email && usuario.Password == password)
                 {
                     resultado = true;
-                    s_usuarioLogeado = usuario;
+                    s_usuarioLogeado = usuario; // Convierte al usuario logueado en el encontrado.
                 }
             }
             return resultado;
         }
-        public List<string> BuscarPorEmail(string email)
+        public List<string> BuscarPorEmail(string email) // Revisa la lista de miembros, si encuentra un miembro que coincida busca las publicaciones hechas por el miembro encontrado.
         {
             List<string> lista = new List<string>();
-            foreach (Publicacion publicacion in _publicaciones)
+            Miembro miembro = new Miembro();
+            bool result = miembro.ValidarMiembro(email);
+            if (!result)
             {
-                if (publicacion.Autor.Email == email) lista.Add(publicacion.ToString());
+                foreach (Publicacion publicacion in _publicaciones)
+                {
+                    if (publicacion.Autor.Email == email) lista.Add(publicacion.ToString());
+                }
+                if (lista.Count == 0) { lista.Add(email + " no ha realizado ninguna publicación todavía."); }
             }
+            else
+            {
+                lista.Add(email + " no existe.");
+            }
+            return lista;
+        }
+
+        public List<string> BuscarComentarios(string email) // Busca todos los posts COMENTADOS de un miembro especifico. Si no encuentra ninguno o no existe, devuelve un mensaje.
+        {
+            List<string> lista = new List<string>();
+            Miembro miembro = new Miembro();
+            bool result = miembro.ValidarMiembro(email);
+            if (!result)
+            {
+                foreach (Publicacion publicacion in _publicaciones)
+                {
+                    if (publicacion is Post)
+                    {
+                        bool coincide = false;
+                        foreach (Comentario comentario in (publicacion as Post).GetComentarios())
+                        {
+                            if (comentario.Autor.Email == email) coincide = true;
+                        }
+                        if (coincide) { lista.Add(publicacion.ToString()); }
+                    }
+                }
+                if (lista.Count == 0) { lista.Add(email + " no ha realizado ninguna publicación todavía."); }
+            } else
+            {
+                lista.Add(email + " no existe.");
+            }
+            return lista;
+        }
+        public List<string> BuscarPorFecha(DateTime fecha, DateTime fecha2)
+        {
+            List<string> lista = new List<string>();
+            List<Publicacion> listaPub = new List<Publicacion>();
+            listaPub = _publicaciones;
+            listaPub.Sort();
+            foreach (Publicacion publicacion in listaPub)
+            {
+                if (publicacion is Post && publicacion.Fecha <= fecha && publicacion.Fecha >= fecha2)
+                {
+                    Publicacion laPublicacion = publicacion;
+                    if (laPublicacion.Contenido.Length > 50) laPublicacion.Contenido = laPublicacion.Contenido.Substring(0, 49);
+                    lista.Add(laPublicacion.ToString());
+                }
+            }
+            if (lista.Count == 0) lista.Add("No se han encontrado posts entre las fechas " + fecha + " y " + fecha2);
             return lista;
         }
         public Boolean AceptarSolicitud(int id)
@@ -169,6 +231,8 @@ namespace ClasesObligatorio
                 {
                     solicitud.EstadoSolicitud = Invitacion.APROBADA;
                     solicitudEncontrada = true;
+                    (solicitud.Emisor).AddAmigo(solicitud.Receptor);
+                    (solicitud.Receptor).AddAmigo(solicitud.Emisor);
                 }
             }
             return solicitudEncontrada;
@@ -188,8 +252,8 @@ namespace ClasesObligatorio
             return solicitudEncontrada;
         }
 
-        public void Reaccionar(string tipoReaccion, int id)
-        {
+        public void Reaccionar(string tipoReaccion, int id)     // No está implementado en consola, placeholder para implementar: 
+        {                                                       // Que reaccion desea hacer en $POST_TITLE$ ? 1 - like | 2 - dislike
             foreach (Publicacion publicacion in _publicaciones)
             {
                 if (publicacion.Id == id)
@@ -206,6 +270,29 @@ namespace ClasesObligatorio
                     }
                 }
             }
+        }
+        public List<string> GetMiembrosActivos() // Devuelve los miembros que más posts han hecho.
+        {
+            List<string> lista = new List<string>();
+            int postsMax = 0;
+            foreach(Usuario usuario in _usuarios)
+            {
+                int numPosts = 0;
+                if(usuario is Miembro)
+                { 
+                    foreach (Publicacion publicacion in _publicaciones)
+                    {
+                        if (publicacion.Autor == usuario) numPosts++;
+                    }
+                    if (numPosts >= postsMax)
+                    {
+                        postsMax = numPosts;
+                        lista.Add((usuario.ToString()));
+                    }
+                }
+            }
+            if (lista.Count == 0) lista.Add("No se han encontrado registros.");
+            return lista;
         }
     }
 }

@@ -8,7 +8,6 @@ namespace ClasesObligatorio
 {
     public class Administrador : Usuario
     {
-        private static Usuario _instancia;
         public Administrador(string email, string password) 
         {
             Email = email;
@@ -17,7 +16,7 @@ namespace ClasesObligatorio
         public Administrador() { }
         Sistema miSistema = Sistema.GetInstancia();
 
-        public Boolean ValidarAdmin(string email)
+        public Boolean ValidarAdmin(string email) 
         {
             Boolean resultado = true;
             foreach (Usuario usuario in miSistema.GetUsuarios())
@@ -26,7 +25,7 @@ namespace ClasesObligatorio
             }
             return resultado;
         }
-        public Boolean ValidarPassword(string password)
+        public Boolean ValidarPassword(string password) // Revisa que tenga mayusculas, minusculas y que sea mayor o igual a 8 caracteres.
         {
             Boolean resultado = false;
             Boolean tieneMayus = false;

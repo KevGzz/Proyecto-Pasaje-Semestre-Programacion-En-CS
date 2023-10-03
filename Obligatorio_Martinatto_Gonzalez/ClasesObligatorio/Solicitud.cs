@@ -10,11 +10,11 @@ namespace ClasesObligatorio
     {
         public int Id { get; set; }
         private static int s_ultimoId;
-        public string Emisor { get; set; }
-        public string Receptor { get; set; } 
+        public Miembro Emisor { get; set; }
+        public Miembro Receptor { get; set; } 
         public Invitacion EstadoSolicitud { get; set; }
 
-        public Solicitud(string emisor, string receptor)
+        public Solicitud(Miembro emisor, Miembro receptor)
         {
             this.Id = s_ultimoId;
             s_ultimoId++;

@@ -33,19 +33,21 @@ namespace ClasesObligatorio
             this._bloqueado = false;
         }
         public Miembro(){ }
-        private static Usuario _instancia;
         Sistema miSistema = Sistema.GetInstancia();
 
-        public Boolean ValidarMiembro(string email)
+        public Boolean ValidarMiembro(string email) // Valida que el email exista en el sistema.
         {
             Boolean resultado = true;
-            foreach (Usuario usuario in miSistema.GetUsuarios())
+            if (email != null)
             {
-                if (usuario.Email == email) resultado = false;
+                foreach (Usuario usuario in miSistema.GetUsuarios())
+                {
+                    if (usuario.Email == email) resultado = false;
+                }
             }
             return resultado;
         }
-        public Boolean ValidarPassword(string password)
+        public Boolean ValidarPassword(string password) // Revisa que tenga mayusculas, minusculas y que sea mayor o igual a 8 caracteres.
         {
             Boolean resultado = false;
             Boolean tieneMayus = false;
@@ -68,7 +70,7 @@ namespace ClasesObligatorio
             }
             return resultado;
         }
-        public Boolean ValidarNomYapellido(string nombre, string apellido)
+        public Boolean ValidarNomYapellido(string nombre, string apellido) // Valida que el nombre y apellido no sean vacíos.
         {
             Boolean resultado = false;
             if(nombre != "" && apellido != "") resultado = true;
@@ -76,7 +78,7 @@ namespace ClasesObligatorio
         }
         public override string ToString()
         {
-            return "Nombre: " + Nombre + " Apellido: " + Apellido + " Email: " + Email;
+            return "{ Nombre: " + Nombre + " Apellido: " + Apellido + " Email: " + Email + " | Fecha de Nacimiento: " + FechaNacimiento  + " }";
         }
     }
 }

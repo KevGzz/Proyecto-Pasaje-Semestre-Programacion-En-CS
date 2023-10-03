@@ -18,5 +18,29 @@ namespace ClasesObligatorio
             Contenido = contenido;
             Privacidad = privacidad;
         }
+        public Comentario() { }
+        public Boolean ValidarTitulo(string titulo) // Valida que el titulo no sea vacío
+        {
+            Boolean result = false;
+            if (titulo != null)
+            {
+                result = true;
+            }
+            return result;
+        }
+        public Boolean ValidarContenido(string contenido) // Valida que el contenido no sea vacío.
+        {
+            Boolean result = false;
+            if (contenido != null)
+            {
+                result = true;
+            }
+            return result;
+        }
+        public override string ToString()
+        {
+            return "Tipo: Comentario | Titulo: " + Titulo + "| Autor: " + Autor.ToString()
+                + "| Fecha: " + Fecha + "| Contenido: " + Contenido;
+        }
     }
 }

@@ -27,5 +27,29 @@ namespace ClasesObligatorio
             Censurado = false;
             _comentarios = new List<Comentario>();
         }
+        public Post() { }
+        public Boolean ValidarTitulo(string titulo) // Valida que el titulo no sea vacío.
+        {
+            Boolean result = false;
+            if (titulo != null)
+            {
+                result = true;
+            }
+            return result;
+        }
+        public Boolean ValidarContenido(string contenido) // Valida que el contenido no sea vacío.
+        {
+            Boolean result = false;
+            if (contenido != null)
+            {
+                result = true;
+            }
+            return result;
+        }
+        public override string ToString()
+        {
+            return "ID : " + Id + " | Tipo: Post | Titulo: " + Titulo + "| Autor: " + Autor.ToString()
+                + "| Fecha: " + Fecha + "| Contenido: " + Contenido;
+        }
     }
 }
