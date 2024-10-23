@@ -1,0 +1,61 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\DELL\\Desktop\\ORT\\Proyectos\\Proyecto-Pasaje-Semestre-Programacion-En-CS\\Obligatorio_Martinatto_Gonzalez\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{51A69ED8-5CED-4D03-B518-C7E18526C76D}|ClasesObligatorio\\ClasesObligatorio.csproj|c:\\users\\dell\\desktop\\ort\\proyectos\\proyecto-pasaje-semestre-programacion-en-cs\\obligatorio_martinatto_gonzalez\\clasesobligatorio\\sistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51A69ED8-5CED-4D03-B518-C7E18526C76D}|ClasesObligatorio\\ClasesObligatorio.csproj|solutionrelative:clasesobligatorio\\sistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC9BA272-1A3D-4E02-974F-0D8B6D6C7B25}|Obligatorio_Martinatto_Gonzalez\\Obligatorio_Martinatto_Gonzalez.csproj|c:\\users\\dell\\desktop\\ort\\proyectos\\proyecto-pasaje-semestre-programacion-en-cs\\obligatorio_martinatto_gonzalez\\obligatorio_martinatto_gonzalez\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BC9BA272-1A3D-4E02-974F-0D8B6D6C7B25}|Obligatorio_Martinatto_Gonzalez\\Obligatorio_Martinatto_Gonzalez.csproj|solutionrelative:obligatorio_martinatto_gonzalez\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\ORT\\Proyectos\\Proyecto-Pasaje-Semestre-Programacion-En-CS\\Obligatorio_Martinatto_Gonzalez\\Obligatorio_Martinatto_Gonzalez\\Program.cs",
+              "RelativeDocumentMoniker": "Obligatorio_Martinatto_Gonzalez\\Program.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\ORT\\Proyectos\\Proyecto-Pasaje-Semestre-Programacion-En-CS\\Obligatorio_Martinatto_Gonzalez\\Obligatorio_Martinatto_Gonzalez\\Program.cs",
+              "RelativeToolTip": "Obligatorio_Martinatto_Gonzalez\\Program.cs",
+              "ViewState": "AQIAAGgBAAAAAAAAAAAYwIkBAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T12:23:53.32Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Sistema.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\ORT\\Proyectos\\Proyecto-Pasaje-Semestre-Programacion-En-CS\\Obligatorio_Martinatto_Gonzalez\\ClasesObligatorio\\Sistema.cs",
+              "RelativeDocumentMoniker": "ClasesObligatorio\\Sistema.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\ORT\\Proyectos\\Proyecto-Pasaje-Semestre-Programacion-En-CS\\Obligatorio_Martinatto_Gonzalez\\ClasesObligatorio\\Sistema.cs",
+              "RelativeToolTip": "ClasesObligatorio\\Sistema.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAIAAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T12:23:53.384Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

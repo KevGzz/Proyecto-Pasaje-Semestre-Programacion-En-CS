@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "5Ga9fDJjTzmNH94IVrvSfEyVhsp7KrULwClrhnchpJicqvkV+90IzOtcJn6Fu88PVLWMTfvhJpjEkngdctSFPA==",
+  "dgSpecHash": "FHCwC2oqATg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\sprin\\cositoLoco\\Obligatorio_Martinatto_Gonzalez\\Obligatorio_Martinatto_Gonzalez\\Obligatorio_Martinatto_Gonzalez.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\DELL\\Desktop\\ORT\\Proyectos\\Proyecto-Pasaje-Semestre-Programacion-En-CS\\Obligatorio_Martinatto_Gonzalez\\Obligatorio_Martinatto_Gonzalez\\Obligatorio_Martinatto_Gonzalez.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\DELL\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.20\\microsoft.windowsdesktop.app.ref.7.0.20.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.20\\microsoft.netcore.app.ref.7.0.20.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.20\\microsoft.aspnetcore.app.ref.7.0.20.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.20\\microsoft.netcore.app.host.win-x64.7.0.20.nupkg.sha512"
+  ],
   "logs": []
 }
