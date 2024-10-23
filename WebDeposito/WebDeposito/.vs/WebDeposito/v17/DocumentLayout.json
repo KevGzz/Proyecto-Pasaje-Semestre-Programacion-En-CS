@@ -1,0 +1,235 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Usuario\\Desktop\\ORT \u0026 Other shi\\obligatorioM3C\\WebDeposito\\WebDeposito\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1A9A7FE7-999E-4100-A9D2-6B62333C1D09}|WebDeposito\\WebDeposito.csproj|c:\\users\\usuario\\desktop\\ort \u0026 other shi\\obligatoriom3c\\webdeposito\\webdeposito\\webdeposito\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A9A7FE7-999E-4100-A9D2-6B62333C1D09}|WebDeposito\\WebDeposito.csproj|solutionrelative:webdeposito\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A9A7FE7-999E-4100-A9D2-6B62333C1D09}|WebDeposito\\WebDeposito.csproj|c:\\users\\usuario\\desktop\\ort \u0026 other shi\\obligatoriom3c\\webdeposito\\webdeposito\\webdeposito\\controllers\\movimientocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A9A7FE7-999E-4100-A9D2-6B62333C1D09}|WebDeposito\\WebDeposito.csproj|solutionrelative:webdeposito\\controllers\\movimientocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A9A7FE7-999E-4100-A9D2-6B62333C1D09}|WebDeposito\\WebDeposito.csproj|c:\\users\\usuario\\desktop\\ort \u0026 other shi\\obligatoriom3c\\webdeposito\\webdeposito\\webdeposito\\views\\movimiento\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1A9A7FE7-999E-4100-A9D2-6B62333C1D09}|WebDeposito\\WebDeposito.csproj|solutionrelative:webdeposito\\views\\movimiento\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A9A7FE7-999E-4100-A9D2-6B62333C1D09}|WebDeposito\\WebDeposito.csproj|c:\\users\\usuario\\desktop\\ort \u0026 other shi\\obligatoriom3c\\webdeposito\\webdeposito\\webdeposito\\controllers\\articulocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A9A7FE7-999E-4100-A9D2-6B62333C1D09}|WebDeposito\\WebDeposito.csproj|solutionrelative:webdeposito\\controllers\\articulocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A9A7FE7-999E-4100-A9D2-6B62333C1D09}|WebDeposito\\WebDeposito.csproj|c:\\users\\usuario\\desktop\\ort \u0026 other shi\\obligatoriom3c\\webdeposito\\webdeposito\\webdeposito\\controllers\\reportecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A9A7FE7-999E-4100-A9D2-6B62333C1D09}|WebDeposito\\WebDeposito.csproj|solutionrelative:webdeposito\\controllers\\reportecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A9A7FE7-999E-4100-A9D2-6B62333C1D09}|WebDeposito\\WebDeposito.csproj|c:\\users\\usuario\\desktop\\ort \u0026 other shi\\obligatoriom3c\\webdeposito\\webdeposito\\webdeposito\\views\\movimiento\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1A9A7FE7-999E-4100-A9D2-6B62333C1D09}|WebDeposito\\WebDeposito.csproj|solutionrelative:webdeposito\\views\\movimiento\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A9A7FE7-999E-4100-A9D2-6B62333C1D09}|WebDeposito\\WebDeposito.csproj|c:\\users\\usuario\\desktop\\ort \u0026 other shi\\obligatoriom3c\\webdeposito\\webdeposito\\webdeposito\\views\\articulo\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1A9A7FE7-999E-4100-A9D2-6B62333C1D09}|WebDeposito\\WebDeposito.csproj|solutionrelative:webdeposito\\views\\articulo\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A9A7FE7-999E-4100-A9D2-6B62333C1D09}|WebDeposito\\WebDeposito.csproj|c:\\users\\usuario\\desktop\\ort \u0026 other shi\\obligatoriom3c\\webdeposito\\webdeposito\\webdeposito\\views\\reporte\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1A9A7FE7-999E-4100-A9D2-6B62333C1D09}|WebDeposito\\WebDeposito.csproj|solutionrelative:webdeposito\\views\\reporte\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A9A7FE7-999E-4100-A9D2-6B62333C1D09}|WebDeposito\\WebDeposito.csproj|c:\\users\\usuario\\desktop\\ort \u0026 other shi\\obligatoriom3c\\webdeposito\\webdeposito\\webdeposito\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1A9A7FE7-999E-4100-A9D2-6B62333C1D09}|WebDeposito\\WebDeposito.csproj|solutionrelative:webdeposito\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A9A7FE7-999E-4100-A9D2-6B62333C1D09}|WebDeposito\\WebDeposito.csproj|c:\\users\\usuario\\desktop\\ort \u0026 other shi\\obligatoriom3c\\webdeposito\\webdeposito\\webdeposito\\models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A9A7FE7-999E-4100-A9D2-6B62333C1D09}|WebDeposito\\WebDeposito.csproj|solutionrelative:webdeposito\\models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A9A7FE7-999E-4100-A9D2-6B62333C1D09}|WebDeposito\\WebDeposito.csproj|c:\\users\\usuario\\desktop\\ort \u0026 other shi\\obligatoriom3c\\webdeposito\\webdeposito\\webdeposito\\models\\tokenmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A9A7FE7-999E-4100-A9D2-6B62333C1D09}|WebDeposito\\WebDeposito.csproj|solutionrelative:webdeposito\\models\\tokenmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A9A7FE7-999E-4100-A9D2-6B62333C1D09}|WebDeposito\\WebDeposito.csproj|c:\\users\\usuario\\desktop\\ort \u0026 other shi\\obligatoriom3c\\webdeposito\\webdeposito\\webdeposito\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1A9A7FE7-999E-4100-A9D2-6B62333C1D09}|WebDeposito\\WebDeposito.csproj|solutionrelative:webdeposito\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 310,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{4a9b7e51-aa16-11d0-a8c5-00a0c921a4d2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\ORT \u0026 Other shi\\obligatorioM3C\\WebDeposito\\WebDeposito\\WebDeposito\\Views\\Articulo\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebDeposito\\Views\\Articulo\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\ORT \u0026 Other shi\\obligatorioM3C\\WebDeposito\\WebDeposito\\WebDeposito\\Views\\Articulo\\Index.cshtml",
+              "RelativeToolTip": "WebDeposito\\Views\\Articulo\\Index.cshtml",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAAEIAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-19T22:46:21.518Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ReporteController.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\ORT \u0026 Other shi\\obligatorioM3C\\WebDeposito\\WebDeposito\\WebDeposito\\Controllers\\ReporteController.cs",
+              "RelativeDocumentMoniker": "WebDeposito\\Controllers\\ReporteController.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\ORT \u0026 Other shi\\obligatorioM3C\\WebDeposito\\WebDeposito\\WebDeposito\\Controllers\\ReporteController.cs",
+              "RelativeToolTip": "WebDeposito\\Controllers\\ReporteController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAABiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-19T22:28:58.34Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UserModel.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\ORT \u0026 Other shi\\obligatorioM3C\\WebDeposito\\WebDeposito\\WebDeposito\\Models\\UserModel.cs",
+              "RelativeDocumentMoniker": "WebDeposito\\Models\\UserModel.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\ORT \u0026 Other shi\\obligatorioM3C\\WebDeposito\\WebDeposito\\WebDeposito\\Models\\UserModel.cs",
+              "RelativeToolTip": "WebDeposito\\Models\\UserModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-19T21:17:29.169Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\ORT \u0026 Other shi\\obligatorioM3C\\WebDeposito\\WebDeposito\\WebDeposito\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "WebDeposito\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\ORT \u0026 Other shi\\obligatorioM3C\\WebDeposito\\WebDeposito\\WebDeposito\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "WebDeposito\\Controllers\\LoginController.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAqwB0AAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-19T21:11:37.719Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "TokenModel.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\ORT \u0026 Other shi\\obligatorioM3C\\WebDeposito\\WebDeposito\\WebDeposito\\Models\\TokenModel.cs",
+              "RelativeDocumentMoniker": "WebDeposito\\Models\\TokenModel.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\ORT \u0026 Other shi\\obligatorioM3C\\WebDeposito\\WebDeposito\\WebDeposito\\Models\\TokenModel.cs",
+              "RelativeToolTip": "WebDeposito\\Models\\TokenModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-19T21:11:08.55Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MovimientoController.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\ORT \u0026 Other shi\\obligatorioM3C\\WebDeposito\\WebDeposito\\WebDeposito\\Controllers\\MovimientoController.cs",
+              "RelativeDocumentMoniker": "WebDeposito\\Controllers\\MovimientoController.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\ORT \u0026 Other shi\\obligatorioM3C\\WebDeposito\\WebDeposito\\WebDeposito\\Controllers\\MovimientoController.cs",
+              "RelativeToolTip": "WebDeposito\\Controllers\\MovimientoController.cs",
+              "ViewState": "AQIAALcAAAAAAAAAAAAAAMwAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-19T20:32:47.187Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ArticuloController.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\ORT \u0026 Other shi\\obligatorioM3C\\WebDeposito\\WebDeposito\\WebDeposito\\Controllers\\ArticuloController.cs",
+              "RelativeDocumentMoniker": "WebDeposito\\Controllers\\ArticuloController.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\ORT \u0026 Other shi\\obligatorioM3C\\WebDeposito\\WebDeposito\\WebDeposito\\Controllers\\ArticuloController.cs",
+              "RelativeToolTip": "WebDeposito\\Controllers\\ArticuloController.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAgwCcAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-19T22:31:27.469Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\ORT \u0026 Other shi\\obligatorioM3C\\WebDeposito\\WebDeposito\\WebDeposito\\Views\\Movimiento\\Create.cshtml",
+              "RelativeDocumentMoniker": "WebDeposito\\Views\\Movimiento\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\ORT \u0026 Other shi\\obligatorioM3C\\WebDeposito\\WebDeposito\\WebDeposito\\Views\\Movimiento\\Create.cshtml",
+              "RelativeToolTip": "WebDeposito\\Views\\Movimiento\\Create.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-19T20:32:09.669Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\ORT \u0026 Other shi\\obligatorioM3C\\WebDeposito\\WebDeposito\\WebDeposito\\Views\\Movimiento\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebDeposito\\Views\\Movimiento\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\ORT \u0026 Other shi\\obligatorioM3C\\WebDeposito\\WebDeposito\\WebDeposito\\Views\\Movimiento\\Index.cshtml",
+              "RelativeToolTip": "WebDeposito\\Views\\Movimiento\\Index.cshtml",
+              "ViewState": "AQIAADAAAAAAAAAAAAAAAFIAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-19T22:47:06.376Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\ORT \u0026 Other shi\\obligatorioM3C\\WebDeposito\\WebDeposito\\WebDeposito\\Views\\Reporte\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebDeposito\\Views\\Reporte\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\ORT \u0026 Other shi\\obligatorioM3C\\WebDeposito\\WebDeposito\\WebDeposito\\Views\\Reporte\\Index.cshtml",
+              "RelativeToolTip": "WebDeposito\\Views\\Reporte\\Index.cshtml",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAAB0AAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-19T22:28:46.109Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\ORT \u0026 Other shi\\obligatorioM3C\\WebDeposito\\WebDeposito\\WebDeposito\\Views\\Login\\Login.cshtml",
+              "RelativeDocumentMoniker": "WebDeposito\\Views\\Login\\Login.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\ORT \u0026 Other shi\\obligatorioM3C\\WebDeposito\\WebDeposito\\WebDeposito\\Views\\Login\\Login.cshtml",
+              "RelativeToolTip": "WebDeposito\\Views\\Login\\Login.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-19T22:34:31.625Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\ORT \u0026 Other shi\\obligatorioM3C\\WebDeposito\\WebDeposito\\WebDeposito\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "WebDeposito\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\ORT \u0026 Other shi\\obligatorioM3C\\WebDeposito\\WebDeposito\\WebDeposito\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "WebDeposito\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-19T20:51:21.561Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

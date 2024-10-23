@@ -1,0 +1,84 @@
+﻿@model IEnumerable<WebDeposito.Models.MovimientoModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+@if (!string.IsNullOrEmpty(ViewBag.mensaje))
+{
+    <div class="alert alert-danger">
+        @ViewBag.mensaje
+    </div>
+}
+<h2>Filtro</h2>
+<form method="post" action="FiltrarPorArtyTipo">
+    <label for="idart">ID Articulo</label>
+    <input type="number" name="idArticulo" value="" placeholder="ID del Articulo..." id="idart" />
+    <label for="idtipo">ID Tipo</label>
+    <input type="number" name="idTipo" value="" placeholder="ID del Tipo de Movimiento..." id="idtipo" />
+    <input type="submit" />
+</form>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Fecha
+            </th>
+            <th>
+                Articulo
+            </th>
+            <th>
+                Tipo de Movimiento
+            </th>
+            <th>
+                Encargado
+            </th>
+            <th>
+                Unidades
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if(Model != null){
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaMovimiento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Articulo.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoMov.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantUnidades)
+            </td>
+        </tr>
+}
+}
+    </tbody>
+</table>
+@if (Model != null)
+{
+    <form method="post" action="~/Movimiento/Next">
+        <input type="submit" value="Next">
+    </form>
+    <form method="post" action="~/Movimiento/Previous">
+        <input type="submit" value="Previous">
+    </form>
+}

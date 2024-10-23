@@ -1,0 +1,96 @@
+﻿
+@using Papeleria.LogicaAplicacion.DTOs
+@model IEnumerable<Papeleria.LogicaAplicacion.DTOs.PedidoDTO>
+
+@{
+    ViewData["Title"] = "Index";
+}
+@if (ViewBag.Mensaje == "" || ViewBag.Mensaje == null) { }
+else
+{
+    <div class="alert alert-danger">
+        @ViewBag.Mensaje
+    </div>
+}
+<h1>Pedidos</h1>
+<h3>Filtros</h3>
+<form method="post" action="Pedidos/FiltrarPorFecha">
+    <label for="fechaPedido">Filtrar por fecha:</label>
+    <div class="form-group">
+        <label for="fechaPrometida" class="control-label"></label>
+        <input type="date" name="FechaPrometida" id="fechaPrometida" />
+        <span validation-for="fechaPrometida" class="text-danger"></span>
+    </div>
+    <input type="submit" />
+</form>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id del Cliente
+            </th>
+            <th>
+                Fecha
+            </th>
+            <th>
+                Fecha Prometida
+            </th>
+            <th>
+                Lineas
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach(var item in Model) {
+        if(!item.Anulado){
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ClienteId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fecha)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaPrometida)
+                </td>
+                <td>
+                    <div class="card" style="width: 18rem;">
+                    <ul class="list-group list-group-flush">
+                        @foreach (LineaDTO linea in item.Lineas)
+                        {
+                                    ArticuloDTO elArticulo = new ArticuloDTO();
+                                    @if (ViewBag.Articulos != null && ViewBag.Articulos.Count > 0)
+                            {
+                                @foreach (ArticuloDTO articulo in ViewBag.Articulos)
+                                {
+                                    @if (linea.ArticuloId == articulo.Id)
+                                    {
+                                        elArticulo = articulo;
+                                    }
+                                }
+                            }
+                            <li class="list-group-item">
+                                @elArticulo.Nombre | @(elArticulo.Precio * linea.CantUnidades) | @linea.CantUnidades
+                            </li>
+                        }
+                    </ul>
+                </div>
+                </td>
+                <td>
+                    @if (ViewBag.Filtro == "Fecha")
+                    {
+                    <form asp-action="AnularPedido">
+                        <input type="hidden" value="@item.Id" name="idPedido" />
+                        <input type="submit" value="Anular" class="btn btn-sm btn-danger" />
+                    </form>
+                    }
+                </td>
+            </tr>
+        }
+}
+    </tbody>
+</table>

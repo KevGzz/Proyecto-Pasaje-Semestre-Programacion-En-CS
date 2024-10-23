@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h3 class="display-4">Bienvenido, @Context.Session.GetString("usuario")</h3>
+    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+         <a class="nav-link" asp-area="" asp-controller="Admin" asp-action="Index"><button type="button" class="btn btn-danger">Listar Admins</button></a>
+         <a class="nav-link" asp-area="" asp-controller="Clientes" asp-action="Index"><button type="button" class="btn btn-success">Listar Clientes</button></a>
+    </div>
+</div>
